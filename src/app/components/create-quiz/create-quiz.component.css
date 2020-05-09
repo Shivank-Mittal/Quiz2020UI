@@ -1,0 +1,41 @@
+.createQuizBody{
+    top: 0;
+    margin: 0;
+    padding: 0;
+    display: block;
+    background-color: #303F9F;
+    background-position: center;
+    background-size: cover;
+}
+.addQuestion
+{
+    margin-top: 2%;
+    margin-left: 2%;
+    width: 30px;
+    position: fixed;
+    z-index: 100;
+}
+.plusIcon
+{
+    transform: scale(2);
+}
+
+.gridContainer{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    z-index: 10;
+}
+
+mat-card {
+    width: 20vw;
+    margin: 10% auto;
+    border-radius: 8px;
+  }
+  mat-form-field, mat-checkbox {
+    width: 80%;
+    display: block;
+    margin: auto;
+  }
+  mat-card-content {
+    margin-top: 20px;
+  }

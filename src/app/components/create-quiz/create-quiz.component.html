@@ -1,0 +1,47 @@
+<div class ="createQuizBody">
+    <div class="addQuestion">
+     
+    <button mat-fab class="plusIcon"  (click)="onQuestionAdd()">
+        <mat-icon matSuffix >add</mat-icon>
+      </button>
+    </div>
+    <form  #userForm = "ngForm" (ngSubmit)="onSave(userForm.value)" >
+    <div class="gridContainer" >
+        
+        <mat-card class="mat-elevation-z12" *ngFor="let Question of numberOfQuestions ;index as i">
+            <mat-card-title style="text-align:center;">Add Question</mat-card-title>
+            <mat-card-content>
+                <!-- <form   #userForm = "ngForm"  (ngSubmit)="onSignIn()"> -->
+                
+                    <div ngModelGroup={{Question}}>
+                        <!-- {{userForm.value | json }} -->
+                         
+                        <mat-form-field>
+                            <input matInput  placeholder="Question" required name="questionContent" ngModel > <mat-icon matSuffix>question_answer</mat-icon>
+                        </mat-form-field>
+                        <mat-form-field>
+                            <input matInput placeholder="Answer1"  required name="answer1" ngModel >
+                        </mat-form-field>
+                        <mat-form-field>
+                            <input matInput placeholder="Answer2"  required name="answe2" ngModel >
+                        </mat-form-field>
+                        <mat-form-field>
+                            <input matInput placeholder="Answer3"  required name="answer3" ngModel >
+                        </mat-form-field>
+                        <mat-form-field>
+                            <input matInput placeholder="Answer4"  required name="answer4" ngModel >
+                        </mat-form-field>
+                        
+                    </div>
+                
+            </mat-card-content>
+            
+        </mat-card>
+ 
+    </div>
+    <div class ="addQuestion">
+        <button  mat-raised-button  type="submit" color="accent" class="plusIcon" >Save</button>
+    </div>
+</form>
+
+</div>

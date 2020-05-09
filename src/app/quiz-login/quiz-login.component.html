@@ -1,0 +1,50 @@
+<div class="login-page">
+    <mat-card class="mat-elevation-z12">
+      <mat-card-title style="text-align:center;">SignIn/SignUp</mat-card-title>
+      <mat-tab-group mat-stretch-tabs class="example-stretched-tabs">
+        <mat-tab label="Sign In">
+            <mat-card-content>
+              <form   #userForm = "ngForm"  (ngSubmit)="onSignIn()">
+              
+                  <div ngModelGroup="user">
+                    <mat-form-field>
+                        <input matInput  placeholder="Email" required name="email" [(ngModel)] ="loginUserModel.email"> <mat-icon matSuffix>email</mat-icon>
+                    </mat-form-field>
+                    <mat-form-field>
+                        <input matInput placeholder="User Name"  required name="username" [(ngModel)] ="loginUserModel.loginName" >
+                        <mat-icon matSuffix>perm_identity</mat-icon>
+                        </mat-form-field>
+                        <div *ngIf="invalidUser" style="color: red; margin-left: 70px; margin-bottom: 15px;">invalidUser</div>
+                        
+                    <mat-checkbox>Remember Me!</mat-checkbox>
+                    <button mat-raised-button color="primary" class="login-button">Sign In </button> 
+
+                </div>
+              </form>
+            </mat-card-content>
+        </mat-tab>
+        <mat-tab label="Sign Up">
+          <mat-card-content>
+            <form #userForm = "ngForm"  (ngSubmit)="onSignUp()">
+                <div ngModelGroup="user">
+                    <mat-form-field>
+                    <input matInput placeholder="User Name"  required name="signUpUsername"  [(ngModel)] ="signUpUserModel.loginName ">
+                    <mat-icon matSuffix>perm_identity</mat-icon>
+                    </mat-form-field>
+                    <mat-form-field>
+                    <input
+                    matInput placeholder="Email" required name="signUpEmail"  [(ngModel)] ="signUpUserModel.email">
+                    <mat-icon matSuffix>email</mat-icon>
+                </mat-form-field>
+                
+                <button mat-raised-button color="primary" class="login-button"> Sign Up </button>
+
+            </div>
+            </form>
+          </mat-card-content>
+        </mat-tab>
+      </mat-tab-group>
+    </mat-card>
+  </div>
+  
+
